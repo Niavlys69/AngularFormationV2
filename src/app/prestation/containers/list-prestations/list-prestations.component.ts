@@ -9,14 +9,14 @@ import { Prestation } from '../../../shared/models/prestation-m';
 })
 export class ListPrestationsComponent implements OnInit {
   public collection: Prestation[];
-  public headers: string[];
+  public listHeaders: string[];
   constructor(
     private prestationService: PrestationService
   ) { }
 
   ngOnInit() {
     this.collection = this.prestationService.collection;
-    this.headers = [
+    this.listHeaders = [
       'Type',
       'Client',
       'Nb Jours',

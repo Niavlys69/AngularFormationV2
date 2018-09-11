@@ -1,16 +1,5 @@
-<div class="container-fluid">
-  <div class="table-responsive">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th *ngFor="let head of headers">{{ head }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let item of collection">
-          <app-prestation [presta]="item"></app-prestation>
-        </ng-container>
-      </tbody>
-    </table>
-  </div>
-</div>
+<app-tableau [headers]="listHeaders">
+  <ng-container *ngFor="let item of collection">
+    <app-prestation [presta]="item"></app-prestation>
+  </ng-container>
+</app-tableau>

@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th *ngFor="let head of headers">{{ head }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-content></ng-content>
+      </tbody>
+    </table>
+  </div>
+</div>
