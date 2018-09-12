@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, CurrencyPipe } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
 // the second parameter 'fr' is optional
@@ -30,12 +30,12 @@ registerLocaleData(localeFr, 'fr');
     PageNotFoundModule,
     NgbModule.forRoot()
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' }, CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   // Diagnostic only: inspect router configuration
   constructor(router: Router) {
-    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+    // console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
   }
 }

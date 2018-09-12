@@ -21,5 +21,15 @@ export const fakeCollection: Prestation[] = [
       tjm_ht: 700,
       state: State.CONFIRME
     }
+  ),
+  new Prestation(
+    {
+      id: 'c1',
+      type_presta: 'Location',
+      client: 'Kiloutou',
+      nb_jours: 10,
+      tjm_ht: 50,
+      state: State.ANNULE
+    }
   )
 ];

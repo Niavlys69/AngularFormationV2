@@ -16,7 +16,6 @@ export class Prestation implements PrestationI {
   }
 
   totalHT(): number {
-    console.log('totalHT called');
     if (!this.nb_jours || !this.tjm_ht) {
       return 0;
     }
@@ -25,7 +24,6 @@ export class Prestation implements PrestationI {
   }
 
   totalTTC(tva?: number): number {
-    console.log('totalTTC called');
     const totalHT = this.totalHT();
 
     if (!this.taux_tva) {

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  title = 'My super CRM';
+  public title = 'My super CRM';
+  public open = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  public toggle(): void {
+    this.open = !this.open;
+  }
 }
