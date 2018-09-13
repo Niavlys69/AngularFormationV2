@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Prestation } from '../../shared/models/prestation-m';
-// import { fakeCollection } from './fakeCollection';
 import { State } from '../../shared/enums/state.enum';
 
 @Injectable({
@@ -14,6 +13,7 @@ import { State } from '../../shared/enums/state.enum';
 export class PrestationService {
   private _collection$: Observable<Prestation[]>;
   private itemsCollection: AngularFirestoreCollection<Prestation>;
+  public message$: Subject<string> = new Subject();
 
   constructor(
     private afs: AngularFirestore

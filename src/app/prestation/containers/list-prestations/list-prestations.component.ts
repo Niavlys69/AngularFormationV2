@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PrestationService } from '../../services/prestation.service';
 import { Prestation } from '../../../shared/models/prestation-m';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-list-prestations',
@@ -12,7 +12,8 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
   // public collection: Prestation[];
   public collection$: Observable<Prestation[]>;
   public listHeaders: string[];
-  private sub: Subscription;
+  public message$: Subject<string>;
+  // private sub: Subscription;
   // public addPresta = { libelle: 'Add Prestation', route: '/prestations/add' };
   constructor(
     private prestationService: PrestationService
@@ -20,6 +21,7 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.collection$ = this.prestationService.collection$;
+    this.message$    = this.prestationService.message$;
     // this.sub = this.prestationService.collection.subscribe((data) => {
     //   this.collection = data;
     // });

@@ -29,7 +29,7 @@ export class PrestationComponent implements OnInit {
 
   public delete(): void {
     this.prestationService.delete(this.presta).then((res) => {
-      console.log(res);
+      this.prestationService.message$.next('Bravo !!!');
     });
   }
 }
