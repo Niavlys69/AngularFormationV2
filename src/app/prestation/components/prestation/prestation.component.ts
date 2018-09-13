@@ -21,7 +21,15 @@ export class PrestationComponent implements OnInit {
 
   public update(e): void {
     const state = e.target.value;
-    this.presta.state = state; // Supprimer après enregistre en BDD
-    this.prestationService.update(this.presta, state);
+    // this.presta.state = state; // Supprimer après enregistre en BDD
+    this.prestationService.update(this.presta, state).then(() => {
+      this.presta.state = state;
+    });
+  }
+
+  public delete(): void {
+    this.prestationService.delete(this.presta).then((res) => {
+      console.log(res);
+    });
   }
 }

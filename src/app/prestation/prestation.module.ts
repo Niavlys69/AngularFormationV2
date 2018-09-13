@@ -8,7 +8,6 @@ import { ListPrestationsComponent } from './containers/list-prestations/list-pre
 import { PrestationComponent } from './components/prestation/prestation.component';
 import { SharedModule } from '../shared/shared.module';
 import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
-import { EditPrestationComponent } from './containers/edit-prestation/edit-prestation.component';
 import { FormComponent } from './components/form/form.component';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
 
@@ -24,7 +23,6 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
     ListPrestationsComponent,
     PrestationComponent,
     AddPrestationComponent,
-    EditPrestationComponent,
     FormComponent,
     FormReactiveComponent
   ]
