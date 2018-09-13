@@ -1,0 +1,8 @@
+@import "~src/variables";
+
+form .ng-valid.ng-touched {
+  border: 1 px solid $palette-color-four;
+}
+form .ng-invalid.ng-touched {
+  border: 1 px solid $palette-color-two;
+}

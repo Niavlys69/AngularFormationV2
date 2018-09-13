@@ -9,6 +9,10 @@
       <tbody>
         <ng-content></ng-content>
       </tbody>
+      <!-- <div>
+        <a [routerLink]="[lastRow.route]">{{ lastRow.libelle }}</a>
+      </div> Solution la plus compliquée -->
+      <ng-content select="div"></ng-content>
     </table>
   </div>
 </div>

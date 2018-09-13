@@ -7,8 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TableauComponent implements OnInit {
   @Input() headers: string[];
+  // @Input() lastRow: {route: string, libelle: string}; // Solution la plus compliquée
   constructor() {
-    // console.log(this.headers);
+    // console.log(this.libelle_action);
    }
 
   ngOnInit() {

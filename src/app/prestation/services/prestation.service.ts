@@ -35,4 +35,7 @@ export class PrestationService {
   // delete presta
 
   // add presta
+  public add(presta: Prestation): void {
+    this.collection.push(presta);
+  }
 }
