@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { PrestationService } from '../../services/prestation.service';
 import { Prestation } from '../../../shared/models/prestation-m';
 import { Observable, Subscription, Subject } from 'rxjs';
@@ -16,7 +18,8 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
   // private sub: Subscription;
   // public addPresta = { libelle: 'Add Prestation', route: '/prestations/add' };
   constructor(
-    private prestationService: PrestationService
+    private prestationService: PrestationService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -35,6 +38,10 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
       'Action',
       ''
     ];
+  }
+
+  public edit(presta: Prestation): void {
+    this.router.navigate(['prestations/edit/', presta.id]);
   }
 
   ngOnDestroy() {

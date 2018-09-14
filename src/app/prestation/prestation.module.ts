@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AddPrestationComponent } from './containers/add-prestation/add-prestation.component';
 import { FormComponent } from './components/form/form.component';
 import { FormReactiveComponent } from './components/form-reactive/form-reactive.component';
+import { EditPrestationComponent } from './containers/edit-prestation/edit-prestation.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
     PrestationComponent,
     AddPrestationComponent,
     FormComponent,
-    FormReactiveComponent
+    FormReactiveComponent,
+    EditPrestationComponent
   ]
 })
 export class PrestationModule { }

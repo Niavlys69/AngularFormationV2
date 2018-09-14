@@ -1,0 +1,6 @@
+<!-- <p>
+  {{ presta | json }}
+</p> -->
+<div class="container">
+  <app-form-reactive [prestaToEdit]="presta" (nItem)="update($event)"></app-form-reactive>
+</div>

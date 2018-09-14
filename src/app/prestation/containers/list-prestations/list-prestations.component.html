@@ -1,7 +1,7 @@
 <!-- <app-tableau [headers]="listHeaders" [lastRow]="addPresta"> -->
 <app-tableau [headers]="listHeaders">
   <ng-container *ngFor="let item of collection$ | async">
-    <app-prestation [presta]="item"></app-prestation>
+    <app-prestation (click)="edit(item)" [presta]="item"></app-prestation>
   </ng-container>
   <div>
     <a [routerLink]="['add']">Ajouter une prestation</a>

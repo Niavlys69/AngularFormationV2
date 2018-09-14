@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,7 +17,8 @@ export class PrestationService {
   public message$: Subject<string> = new Subject();
 
   constructor(
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private http: HttpClient
   ) {
     this.itemsCollection = afs.collection<Prestation>('prestations');
     this.collection$ = this.itemsCollection.valueChanges().pipe(
@@ -28,6 +30,7 @@ export class PrestationService {
         return tab;
       })
     );
+    // this.collection$ = this.http.get('urlapi/prestations');
   }
 
   get collection$(): Observable<Prestation[]> {
@@ -44,6 +47,7 @@ export class PrestationService {
     return this.itemsCollection.doc(id).set(prestation).catch((e) => {
       console.log(e);
     });
+    // return this.http.post('urlapi/prestations', item);
   }
 
   public update(item: Prestation, option?: State): Promise<any> {
@@ -54,6 +58,7 @@ export class PrestationService {
     return this.itemsCollection.doc(item.id).update(presta).catch((e) => {
       console.log(e);
     });
+    // return this.http.patch('urlapi/prestations/' + item.id, item);
   }
 
   public delete(item: Prestation): Promise<any> {
@@ -61,9 +66,11 @@ export class PrestationService {
     return this.itemsCollection.doc(item.id).delete().catch((e) => {
       console.log(e);
     });
+    // return this.http.delete(`urlapi/prestations/${item.id}`);
   }
 
   public get(id: string): Observable<Prestation> {
     return this.itemsCollection.doc<Prestation>(id).valueChanges();
+    // return this.http.get('urlapi/prestations/${id}');
   }
 }

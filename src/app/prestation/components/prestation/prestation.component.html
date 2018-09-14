@@ -5,11 +5,11 @@
 <td>{{ presta | total | currency: 'EUR' }}</td>
 <td>{{ presta | total: presta.taux_tva | currency: 'EUR' }}</td>
 <td [appState]="presta.state">
-  <select (change)="update($event)">
+  <select (change)="update($event)" (click)="$event.stopPropagation()">
     <option [value]="presta.state">{{ presta.state }}</option>
     <ng-container *ngFor="let state of states">
         <option *ngIf="state !== presta.state" [value]="state">{{ state }}</option>
     </ng-container>
   </select>
 </td>
-<td><button (click)="delete()">X</button></td>
+<td><button (click)="$event.stopPropagation(); delete()">X</button></td>
